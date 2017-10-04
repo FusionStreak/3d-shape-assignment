@@ -4,17 +4,17 @@ public class Cuboid {
     private float l;
     private float w;
     private float h;
-    public Cuboid(float length, float width, float height) {
+    Cuboid(float length, float width, float height) {
         l = length;
         w = width;
         h = height;
     }
 
-    public float getVolume(){
+    private float getVolume(){
         return l * h * w;
     }
 
-    public float getSurfaceArea(){
+    private float getSurfaceArea(){
         return (2*(w * h)) + (2*(l * h)) + (2*(l * w));
     }
 
