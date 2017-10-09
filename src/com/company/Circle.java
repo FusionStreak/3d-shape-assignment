@@ -3,8 +3,12 @@ package com.company;
 public class Circle implements $2D_Shape {
     private float radius;
 
+    public Circle(float radius) {
+        this.radius = radius;
+    }
+
     @Override
     public float getArea() {
-        return 0;
+        return (float) ((radius * radius) * Math.PI);
     }
 }

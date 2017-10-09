@@ -5,10 +5,12 @@ public class Rectangle implements $2D_Shape {
     private float length;
 
     public Rectangle(float width, float length) {
+        this.length = length;
+        this.width = width;
     }
 
     @Override
     public float getArea() {
-        return 0;
+        return width * length;
     }
 }
