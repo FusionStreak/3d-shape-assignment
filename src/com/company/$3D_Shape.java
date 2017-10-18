@@ -5,7 +5,7 @@ public interface $3D_Shape {
 
     float getSurfaceArea();
 
-    void volumeExplain();
+    String volumeExplain();
 
-    void surfaceAreaExplain();
+    String surfaceAreaExplain();
 }

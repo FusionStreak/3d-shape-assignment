@@ -12,12 +12,13 @@ public class Cylinder extends Prism {
     }
 
     @Override
-    public void volumeExplain() {
+    public String volumeExplain() {
 
+        return null;
     }
 
     @Override
-    public void surfaceAreaExplain() {
-
+    public String surfaceAreaExplain() {
+        return null;
     }
 }

@@ -1,6 +1,6 @@
 package com.company;
 
-public class Square extends $2D_Shape {
+public class Square implements  $2D_Shape {
     private float side;
 
     public Square(float side) {

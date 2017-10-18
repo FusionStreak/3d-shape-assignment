@@ -2,28 +2,38 @@ package com.company;
 
 import static java.lang.System.*;
 
-class Cuboid extends Prism {
-    Cuboid(float length, float width, float height) {
+public class Cuboid extends Prism {
+    public Cuboid(float length, float width, float height) {
         base = new Rectangle(width, length);
+        this.height = height;
+
+
     }
 
     @Override
     public float getVolume(){
-        return l * h * w;
+        return base.getArea() * height ;
     }
 
     @Override
     public float getSurfaceArea(){
-        return (2*(w * h)) + (2*(l * h)) + (2*(l * w));
+        return (2*(getBase().getWidth() * height)) + (2*(getBase().getLength() * height)) + (2* base.getArea());
+    }
+
+    private Rectangle getBase() {
+        return (Rectangle)this.base;
     }
 
     @Override
-    public void volumeExplain(){
-        out.println("Area of the Cross Section: " + String.format("%.2f", h) + " x " + String.format("%.2f", w) + " = " + String.format("%.2f", (h * w)) );
-        out.println("Multiply by the length: " + String.format("%.2f",l) + " x " + String.format("%.2f", (h * w)) +  " = " + getVolume() );
+    public String volumeExplain(){
+        final String message;
+        message = "Area of the Cross Section: " + String.format("%.2f", getBase().getLength()) + " x " + String.format("%.2f", getBase().getWidth()) + " = " + String.format("%.2f", (base.getArea())) + lineSeparator() + "Multiply by the length: " + String.format("%.2f", height) + " x " + String.format("%.2f", (base.getArea())) + " = " + getVolume();
+        out.println(message);
+        return message;
     }
-    @Override
-    public void surfaceAreaExplain(){
 
+    @Override
+    public String surfaceAreaExplain(){
+        return null;
     }
 }

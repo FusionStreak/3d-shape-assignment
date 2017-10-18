@@ -12,12 +12,12 @@ public class Square_Pyramid extends Pyramid {
     }
 
     @Override
-    public void volumeExplain() {
-
+    public String volumeExplain() {
+    return "";
     }
 
     @Override
-    public void surfaceAreaExplain() {
-
+    public String surfaceAreaExplain() {
+        return null;
     }
 }

@@ -13,4 +13,12 @@ public class Rectangle implements $2D_Shape {
     public float getArea() {
         return width * length;
     }
+
+    public float getWidth() {
+        return width;
+    }
+
+    public float getLength() {
+        return length;
+    }
 }
