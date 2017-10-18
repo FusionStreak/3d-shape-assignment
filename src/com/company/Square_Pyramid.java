@@ -1,6 +1,10 @@
 package com.company;
 
 public class Square_Pyramid extends Pyramid {
+    public Square_Pyramid(float side, float height) {
+        base = new Square(side);
+    }
+
     @Override
     public float getVolume() {
         return 0;
