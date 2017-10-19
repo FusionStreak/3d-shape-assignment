@@ -1,6 +1,8 @@
 package com.company;
 
 import static java.lang.Math.*;
+import static java.lang.System.lineSeparator;
+import static java.lang.System.out;
 
 public class Sphere implements $3D_Shape {
     private float radius;
@@ -11,7 +13,7 @@ public class Sphere implements $3D_Shape {
 
     @Override
     public float getVolume() {
-        return (float) ((4/3) * PI * pow(radius,3));
+        return (float) (((float)4/(float)3) * PI * pow(radius,3));
     }
 
     @Override
@@ -21,11 +23,15 @@ public class Sphere implements $3D_Shape {
 
     @Override
     public String volumeExplain() {
-        return null;
+        final String message;
+        message = "(4/3) x π x  " + String.format("%.2f",radius) + "^3 = " + String.format("%.2f", getVolume());
+        return message;
     }
 
     @Override
     public String surfaceAreaExplain() {
-        return null;
+        final String message;
+        message = "4 x π x  " + radius + "^2 = " + getSurfaceArea();
+        return message;
     }
 }

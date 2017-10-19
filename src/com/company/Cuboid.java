@@ -28,12 +28,13 @@ public class Cuboid extends Prism {
     public String volumeExplain(){
         final String message;
         message = "Area of the Cross Section: " + String.format("%.2f", getBase().getLength()) + " x " + String.format("%.2f", getBase().getWidth()) + " = " + String.format("%.2f", (base.getArea())) + lineSeparator() + "Multiply by the length: " + String.format("%.2f", height) + " x " + String.format("%.2f", (base.getArea())) + " = " + getVolume();
-        out.println(message);
         return message;
     }
 
     @Override
     public String surfaceAreaExplain(){
-        return null;
+        final String message;
+        message = "";
+        return message;
     }
 }

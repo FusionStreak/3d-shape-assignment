@@ -3,9 +3,9 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        Cuboid cube = new Cuboid(5,5,5);
-        cube.getVolume();
-        cube.volumeExplain();
+        Cylinder c1 = new Cylinder(3,15);
+        System.out.println(c1.getVolume());
+        System.out.println(c1.getSurfaceArea());
 
     }
 }
