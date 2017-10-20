@@ -1,5 +1,7 @@
 package com.company;
 
+import static java.lang.System.lineSeparator;
+
 public class Circle implements $2D_Shape {
     private float radius;
 
@@ -20,4 +22,10 @@ public class Circle implements $2D_Shape {
         return (float)( 2 * radius * Math.PI);
     }
 
+    @Override
+    public String areaExplain() {
+        final String message;
+        message = "Area of a circle (π * radius^2): " + "π x " + getRadius() + "^2 = " + getArea();
+        return message;
+    }
 }

@@ -1,7 +1,9 @@
 package com.company;
 
+import static java.lang.System.lineSeparator;
+
 public class Cylinder extends Prism {
-    public Cylinder(float radius, float height) {
+    Cylinder(float radius, float height) {
         base = new Circle(radius);
         this.height = height;
     }
@@ -20,12 +22,15 @@ public class Cylinder extends Prism {
 
     @Override
     public String volumeExplain() {
-
-        return null;
+        final String message;
+        message = "Area of base x height =  Volume" + lineSeparator() + getBase().areaExplain() + lineSeparator() + "Multiply by " + height + " = " + getVolume();
+        return message;
     }
 
     @Override
     public String surfaceAreaExplain() {
-        return null;
+        final String message;
+        message = "2(Area of base) + total area of each of the rectangular faces";
+        return message;
     }
 }

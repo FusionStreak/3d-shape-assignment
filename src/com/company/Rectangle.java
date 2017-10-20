@@ -14,6 +14,13 @@ public class Rectangle implements $2D_Shape {
         return width * length;
     }
 
+    @Override
+    public String areaExplain() {
+        final String message;
+        message = "Area of a rectangle (width x length): " + getWidth()+ " x " + getLength() + " = " + getArea();
+        return message;
+    }
+
     public float getWidth() {
         return width;
     }
