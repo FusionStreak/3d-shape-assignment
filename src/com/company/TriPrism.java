@@ -1,8 +1,10 @@
 package com.company;
 
-public class TriPrism extends Prism {
+import static java.lang.System.lineSeparator;
 
-    public TriPrism(float side, float height) {
+class TriPrism extends Prism {
+
+    TriPrism(float side, float height) {
         base = new Equilateral_Triangle(side);
         this.height = height;
     }
@@ -20,11 +22,21 @@ public class TriPrism extends Prism {
     private Equilateral_Triangle getBase(){return (Equilateral_Triangle)this.base;}
     @Override
     public String volumeExplain() {
-        return null;
+        final String message;
+        message = "Area of base x height =  Volume" + lineSeparator() + getBase().areaExplain() + lineSeparator() + "Multiply by " + height + " = " + getVolume();
+        return message;
     }
 
     @Override
     public String surfaceAreaExplain() {
-        return null;
+        final String message;
+        message = "2 times the area of base) + 3 times the area of the rectangular faces" + lineSeparator() + getBase().areaExplain() + lineSeparator() + this.getRectangularFace().areaExplain() + lineSeparator() + getSurfaceArea();
+        return message;
+    }
+
+    @Override
+    protected Rectangle getRectangularFace() {
+        Rectangle rFace = new Rectangle(getBase().getSide(), height);
+        return rFace;
     }
 }

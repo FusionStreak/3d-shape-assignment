@@ -1,9 +1,9 @@
 package com.company;
 
-import static java.lang.System.*;
+import static java.lang.System.lineSeparator;
 
-public class Cuboid extends Prism {
-    public Cuboid(float length, float width, float height) {
+class Cuboid extends Prism {
+    Cuboid(float length, float width, float height) {
         base = new Rectangle(width, length);
         this.height = height;
 
@@ -27,14 +27,19 @@ public class Cuboid extends Prism {
     @Override
     public String volumeExplain(){
         final String message;
-        message = "Area of the Cross Section: " + String.format("%.2f", getBase().getLength()) + " x " + String.format("%.2f", getBase().getWidth()) + " = " + String.format("%.2f", (base.getArea())) + lineSeparator() + "Multiply by the length: " + String.format("%.2f", height) + " x " + String.format("%.2f", (base.getArea())) + " = " + getVolume();
+        message = "Area of base x height =  Volume" + lineSeparator() + getBase().areaExplain() + lineSeparator() + "Multiply by " + height + " = " + getVolume();
         return message;
     }
 
     @Override
     public String surfaceAreaExplain(){
         final String message;
-        message = "";
+        Rectangle lFace = new Rectangle(getBase().getLength(), height);
+        Rectangle wFace = new Rectangle(getBase().getWidth(), height);
+        message = "Total area of each face. 2(length x width) + 2(length x height) + 2(width x height)" + lineSeparator() + getBase().areaExplain() + lineSeparator() + lFace.areaExplain() + lineSeparator() + wFace.areaExplain() +lineSeparator()+ "Add all together and multiply by 2" + lineSeparator() + getSurfaceArea() ;
         return message;
     }
+
+    @Override
+    protected Rectangle getRectangularFace() { return null;}
 }

@@ -2,7 +2,7 @@ package com.company;
 
 import static java.lang.System.lineSeparator;
 
-public class Cylinder extends Prism {
+class Cylinder extends Prism {
     Cylinder(float radius, float height) {
         base = new Circle(radius);
         this.height = height;
@@ -15,10 +15,16 @@ public class Cylinder extends Prism {
 
     @Override
     public float getSurfaceArea() {
-        return (getBase().getCircumference() * height) + (2 * (base.getArea()));
+        return (this.getRectangularFace().getArea()) + (2 * (base.getArea()));
     }
 
     private Circle getBase(){ return (Circle)this.base;}
+
+    @Override
+    protected Rectangle getRectangularFace() {
+        Rectangle rFace = new Rectangle(getBase().getCircumference(),height);
+        return rFace;
+    }
 
     @Override
     public String volumeExplain() {
@@ -30,7 +36,7 @@ public class Cylinder extends Prism {
     @Override
     public String surfaceAreaExplain() {
         final String message;
-        message = "2(Area of base) + total area of each of the rectangular faces";
+        message = "2(Area of base) + total area of each of the rectangular faces" + lineSeparator() + getBase().areaExplain() + lineSeparator() + this.getRectangularFace().areaExplain() + lineSeparator();
         return message;
     }
 }
