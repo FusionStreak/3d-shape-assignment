@@ -73,15 +73,14 @@ public class Main {
         }
 
         boolean validMethod = false;
-        boolean another = false;
+        Boolean another = null;
         String[] methods = {"-Get Volume", "-Get Surface Area", "-Explain Volume", "-Explain Surface Area"};
         out.println("Select one of the following methods");
         for (String method : methods) out.println(method);
         if (scan.hasNext())
             scan.nextLine();
 
-        while (!validMethod /*|| another*/) {
-            another = false;
+        while (!validMethod || another) {
             input = scan.nextLine();
             out.println(input);
             switch (input) {
@@ -104,18 +103,23 @@ public class Main {
                 default:
                     out.println("Invalid method, please try again");
             }
-            /*
-            out.println("Want to use another method (Y/N)");
-            input = scan.nextLine();
-            switch (input) {
-            case "Y":
-            another = true;
-            break;
-            case "N":
-            break;
-            default: out.println("Invalid");
+            another = null;
+            while (another == null) {
+                out.println("Want to use another method (Y/N)");
+                input = scan.nextLine();
+                switch (input) {
+                    case "Y":
+                        another = true;
+                        out.println("Select one of the following methods");
+                        for (String method : methods) out.println(method);
+                        break;
+                    case "N":
+                        another = false;
+                        break;
+                    default:
+                        out.println("Invalid");
+                }
             }
-            */
 
         }
 
