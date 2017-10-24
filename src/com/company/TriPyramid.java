@@ -5,7 +5,7 @@ package com.company;
 // The surface area A + 3/2bh, where A is the area of the base, and b is the length of one side of the base,
 // and h is the slant height of one of the triangular faces.
 class TriPyramid extends Pyramid {
-    public TriPyramid(float baseLength, float height) {
+    TriPyramid(float baseLength, float height) {
         this.base = new Equilateral_Triangle(baseLength);
         this.height = height;
     }
@@ -27,6 +27,6 @@ class TriPyramid extends Pyramid {
 
     @Override
     public float getVolume(){
-        return 0;
+        return (1f/3f) * (base.getArea() * height);
     }
 }
