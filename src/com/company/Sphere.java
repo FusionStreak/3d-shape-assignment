@@ -1,8 +1,6 @@
 package com.company;
 
 import static java.lang.Math.*;
-import static java.lang.System.lineSeparator;
-import static java.lang.System.out;
 
 public class Sphere implements $3D_Shape {
     private float radius;

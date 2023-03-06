@@ -1,7 +1,5 @@
 package com.company;
 
-import static java.lang.System.lineSeparator;
-
 public class Circle implements $2D_Shape {
     private float radius;
 
