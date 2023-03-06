@@ -1,0 +1,79 @@
+@startuml GeneralStructure
+
+skinparam{
+    backgroundColor #202020
+    defaultFontName Courier
+    defaultFontColor #FFFFFF
+
+    ClassBackgroundColor #333333
+    ClassBorderColor #AAAAAA
+    ClassHeaderBackgroundColor #444444
+    ClassFontSize 19
+    ClassFontStyle bold
+    ClassAttributeFontSize 17
+    
+
+    Linetype orthogonal
+    Nodesep 150
+    Ranksep 150
+    ArrowThickness 3
+    ArrowColor #FFFFFF
+  
+}
+
+title 3D Shape Assignment - Class UML Diagram
+
+
+class Circle {
+
+}
+
+class Cuboid {
+
+}
+
+class Cylinder {
+
+}
+
+class Equilateral_Triangle {
+
+}
+
+class Prism {
+
+}
+
+class Pyramid {
+
+}
+
+class Rectangle {
+
+}
+
+class Sphere {
+
+}
+
+class Square {
+
+}
+
+class Triangle {
+
+}
+
+class TriPyramid {
+
+}
+
+interface 2D_Shape {
+
+}
+
+interface 3D_Shape {
+
+}
+
+@enduml
