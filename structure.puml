@@ -75,6 +75,10 @@ class Equilateral_Triangle extends Triangle {
     - float side
     --[Constructor]--
     + Equilateral_Triangle(float)
+    --[Methods]--
+    + float getSide()
+    + float getArea()
+    + String areaExplain()
 }
 
 abstract class Prism implements 3D_Shape {
@@ -90,19 +94,46 @@ abstract class Pyramid implements 3D_Shape {
 }
 
 class Rectangle implements 2D_Shape {
-
+    - float width
+    - float length
+    --[Constructor]--
+    + Rectangle(float, float)
+    --[Methods]--
+    + float getWidth()
+    + float getLength()
+    + float getArea()
+    + String areaExplain()
 }
 
 class Sphere implements 3D_Shape {
-
+    - float radius
+    --[Constructor]--
+    + Sphere(float)
+    --[Methods]--
+    + float getVolume()
+    + float getSurfaceArea()
+    + String surfaceAreaExplain()
+    + String volumeExplain()
 }
 
 class Square implements 2D_Shape {
-
+    - float side
+    --[Constructor]--
+    + Square(float)
+    --[Methods]--
+    + float getSide()
+    + float getArea()
+    + String areaExplain()
 }
 
 class Square_Pyramid extends Pyramid {
-
+    --[Constructor]--
+    + Square_Pyramid(float, float)
+    --[Methods]--
+    + float getVolume()
+    + float getSurfaceArea()
+    + String volumeExplain()
+    + String surfaceAreaExplain()
 }
 
 class Triangle implements 2D_Shape {
@@ -114,7 +145,13 @@ class TriPrism extends Prism    {
 }
 
 class TriPyramid extends Pyramid {
-
+    --[Constructor]--
+    + TriPyramid(float, float)
+    --[Methods]--
+    + float getVolume()
+    + float getSurfaceArea()
+    + String volumeExplain()
+    + String surfaceAreaExplain()
 }
 
 @enduml
