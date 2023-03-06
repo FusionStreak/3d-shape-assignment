@@ -1,6 +1,4 @@
-package com.company;
-
-public class Square implements  $2D_Shape {
+public class Square implements $2D_Shape {
     private float side;
 
     public Square(float side) {
@@ -15,7 +13,7 @@ public class Square implements  $2D_Shape {
     @Override
     public String areaExplain() {
         final String message;
-        message = "Area of a square (side^2): " +  getSide() + "^2 = " + getArea();
+        message = "Area of a square (side^2): " + getSide() + "^2 = " + getArea();
         return message;
     }
 

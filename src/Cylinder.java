@@ -1,5 +1,3 @@
-package com.company;
-
 import static java.lang.System.lineSeparator;
 
 class Cylinder extends Prism {
@@ -18,25 +16,29 @@ class Cylinder extends Prism {
         return (this.getRectangularFace().getArea()) + (2 * (base.getArea()));
     }
 
-    private Circle getBase(){ return (Circle)this.base;}
+    private Circle getBase() {
+        return (Circle) this.base;
+    }
 
     @Override
     protected Rectangle getRectangularFace() {
-        Rectangle rFace = new Rectangle(getBase().getCircumference(),height);
+        Rectangle rFace = new Rectangle(getBase().getCircumference(), height);
         return rFace;
     }
 
     @Override
     public String volumeExplain() {
         final String message;
-        message = "Area of base x height =  Volume" + lineSeparator() + getBase().areaExplain() + lineSeparator() + "Multiply by " + height + " = " + getVolume();
+        message = "Area of base x height =  Volume" + lineSeparator() + getBase().areaExplain() + lineSeparator()
+                + "Multiply by " + height + " = " + getVolume();
         return message;
     }
 
     @Override
     public String surfaceAreaExplain() {
         final String message;
-        message = "2(Area of base) + total area of each of the rectangular faces" + lineSeparator() + getBase().areaExplain() + lineSeparator() + this.getRectangularFace().areaExplain() + lineSeparator();
+        message = "2(Area of base) + total area of each of the rectangular faces" + lineSeparator()
+                + getBase().areaExplain() + lineSeparator() + this.getRectangularFace().areaExplain() + lineSeparator();
         return message;
     }
 }

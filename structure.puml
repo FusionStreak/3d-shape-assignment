@@ -11,68 +11,109 @@ skinparam{
     ClassFontSize 19
     ClassFontStyle bold
     ClassAttributeFontSize 17
-    
 
-    Linetype orthogonal
-    Nodesep 150
-    Ranksep 150
+
+    Linetype ortho
     ArrowThickness 3
     ArrowColor #FFFFFF
-  
 }
 
 title 3D Shape Assignment - Class UML Diagram
 
 
-class Circle {
-
-}
-
-class Cuboid {
-
-}
-
-class Cylinder {
-
-}
-
-class Equilateral_Triangle {
-
-}
-
-class Prism {
-
-}
-
-class Pyramid {
-
-}
-
-class Rectangle {
-
-}
-
-class Sphere {
-
-}
-
-class Square {
-
-}
-
-class Triangle {
-
-}
-
-class TriPyramid {
-
-}
-
 interface 2D_Shape {
-
+    --[Methods]--
+    + float getArea()
+    + String areaExplain()
 }
 
 interface 3D_Shape {
+    --[Methods]--
+    + float getVolume()
+    + float getSurfaceArea()
+    + String volumeExplain()
+    + String surfaceAreaExplain()
+}
+
+class Circle implements 2D_Shape {
+    - float radius
+    --[Contructor]--
+    + Circle(float)
+    --[Methods]--
+    + float getArea()
+    + float getRadius()
+    + float getCircumference()
+    + String areaExplain()
+
+}
+
+class Cuboid extends Prism {
+    --[Constructor]--
+    + Cuboid(float, float, float)
+    --[Methods]--
+    - Rectangle getBase()
+    # Rectangle getRectangularFace()
+    + float getVolume()
+    + float getSurfaceArea()
+    + String surfaceAreaExplain()
+    + String volumeExplain()
+}
+
+class Cylinder extends Prism {
+    --[Constructor]--
+    + Cylinder(float, float)
+    --[Methods]--
+    - Circle getBase()
+    # Rectangle getRectangularFace()
+    + float getVolume()
+    + float getSurfaceArea()
+    + String surfaceAreaExplain()
+    + String volumeExplain()
+}
+
+class Equilateral_Triangle extends Triangle {
+    - float side
+    --[Constructor]--
+    + Equilateral_Triangle(float)
+}
+
+abstract class Prism implements 3D_Shape {
+    # 2D_Shape base
+    # float height
+    --[Methods]--
+    # {abstract} Rectangle getRectangularFace()
+}
+
+abstract class Pyramid implements 3D_Shape {
+    # 2D_Shape base
+    # float height
+}
+
+class Rectangle implements 2D_Shape {
+
+}
+
+class Sphere implements 3D_Shape {
+
+}
+
+class Square implements 2D_Shape {
+
+}
+
+class Square_Pyramid extends Pyramid {
+
+}
+
+class Triangle implements 2D_Shape {
+
+}
+
+class TriPrism extends Prism    {
+
+}
+
+class TriPyramid extends Pyramid {
 
 }
 

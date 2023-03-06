@@ -1,5 +1,3 @@
-package com.company;
-
 import static java.lang.System.err;
 
 class $3DShapeFactory {
@@ -8,17 +6,17 @@ class $3DShapeFactory {
         $3D_Shape shape = null;
         switch (shapeType) {
             case SPHERE:
-                if ( dimension1 == null)
+                if (dimension1 == null)
                     err.print("Radius of sphere should be provided as dimension1");
-                else shape = new Sphere(dimension1);
+                else
+                    shape = new Sphere(dimension1);
                 break;
             case CYLINDER:
                 Float height = dimension2;
 
-                if (dimension1 != null && height != null ) {
+                if (dimension1 != null && height != null) {
                     shape = new Cylinder(dimension1, height);
-                }
-                else {
+                } else {
                     if (dimension1 == null) {
                         err.print("Radius of cylinder should be provided as dimension1");
                     }
@@ -33,8 +31,7 @@ class $3DShapeFactory {
 
                 if ((dimension2 != null) && (dimension1 != null) && (height != null)) {
                     shape = new Cuboid(dimension1, dimension2, height);
-                }
-                else {
+                } else {
                     if (dimension1 == null) {
                         err.print("Length of cuboid should be provided as dimension1");
                     }
@@ -51,10 +48,9 @@ class $3DShapeFactory {
                 Float side = dimension1;
                 height = dimension2;
 
-                if (side != null && height != null ) {
-                shape = new TriPrism(side, height);
-                }
-                else {
+                if (side != null && height != null) {
+                    shape = new TriPrism(side, height);
+                } else {
                     if (side == null) {
                         err.print("Side of triangular face should be provided as dimension1");
                     }
@@ -67,10 +63,9 @@ class $3DShapeFactory {
                 side = dimension1;
                 height = dimension2;
 
-                if (side != null && height != null ) {
+                if (side != null && height != null) {
                     shape = new TriPyramid(side, height);
-                }
-                else {
+                } else {
                     if (side == null) {
                         err.print("Side of triangular base should be provided as dimension1");
                     }
@@ -83,10 +78,9 @@ class $3DShapeFactory {
                 side = dimension1;
                 height = dimension2;
 
-                if (side != null && height != null ) {
+                if (side != null && height != null) {
                     shape = new Square_Pyramid(side, height);
-                }
-                else {
+                } else {
                     if (side == null) {
                         err.print("Side of square base should be provided as dimension1");
                     }
@@ -103,13 +97,12 @@ class $3DShapeFactory {
     }
 
     static $3D_Shape create3DShape($3DShapeEnum shapeType, float d1) {
-        return create3DShape( shapeType, d1, null, null);
+        return create3DShape(shapeType, d1, null, null);
     }
 
     static $3D_Shape create3DShape($3DShapeEnum shapeType, float d1, float d2) {
-        return create3DShape( shapeType, d1, d2, null);
+        return create3DShape(shapeType, d1, d2, null);
     }
-
 
     public enum $3DShapeEnum {
         SPHERE, CYLINDER, CUBOID, TRIPRISM, TRIPYRAMID, SQUAREPYRAMID

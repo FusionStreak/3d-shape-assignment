@@ -1,7 +1,4 @@
-
-package com.company;
 import java.util.Scanner;
-
 import static java.lang.System.*;
 
 public class Main {
@@ -9,9 +6,12 @@ public class Main {
     public static void main(String[] args) {
         boolean validShape = false;
         $3D_Shape theShape = null;
-        out.println("Choose a shape from the choices below (spell it exactly as it is below, all triangles are assumed equilateral):");
-        String[] shapes = {"-Sphere", "-Triangular Prism", "-Cylinder", "-Cuboid", "-Triangle Based Pyramid", "-Square Based Pyramid"};
-        for (String shape : shapes) out.println(shape);
+        out.println(
+                "Choose a shape from the choices below (spell it exactly as it is below, all triangles are assumed equilateral):");
+        String[] shapes = { "-Sphere", "-Triangular Prism", "-Cylinder", "-Cuboid", "-Triangle Based Pyramid",
+                "-Square Based Pyramid" };
+        for (String shape : shapes)
+            out.println(shape);
         try (Scanner scan = new Scanner(in)) {
             String input;
             while (!validShape) {
@@ -47,7 +47,8 @@ public class Main {
                         float length = scan.nextFloat();
                         out.println("Enter height of cuboid");
                         height = scan.nextFloat();
-                        theShape = $3DShapeFactory.create3DShape($3DShapeFactory.$3DShapeEnum.CUBOID, width, length, height);
+                        theShape = $3DShapeFactory.create3DShape($3DShapeFactory.$3DShapeEnum.CUBOID, width, length,
+                                height);
                         validShape = true;
                         break;
                     case "Triangle Based Pyramid":
@@ -63,7 +64,8 @@ public class Main {
                         side = scan.nextFloat();
                         out.println("Enter vertical height");
                         height = scan.nextFloat();
-                        theShape = $3DShapeFactory.create3DShape($3DShapeFactory.$3DShapeEnum.SQUAREPYRAMID, side, height);
+                        theShape = $3DShapeFactory.create3DShape($3DShapeFactory.$3DShapeEnum.SQUAREPYRAMID, side,
+                                height);
                         validShape = true;
                         break;
                     default:
@@ -74,9 +76,10 @@ public class Main {
 
             boolean validMethod = false;
             Boolean another = null;
-            String[] methods = {"-Get Volume", "-Get Surface Area", "-Explain Volume", "-Explain Surface Area"};
+            String[] methods = { "-Get Volume", "-Get Surface Area", "-Explain Volume", "-Explain Surface Area" };
             out.println("Select one of the following methods");
-            for (String method : methods) out.println(method);
+            for (String method : methods)
+                out.println(method);
             if (scan.hasNext())
                 scan.nextLine();
 
@@ -111,7 +114,8 @@ public class Main {
                         case "Y":
                             another = true;
                             out.println("Select one of the following methods");
-                            for (String method : methods) out.println(method);
+                            for (String method : methods)
+                                out.println(method);
                             break;
                         case "N":
                             another = false;
@@ -123,7 +127,6 @@ public class Main {
 
             }
         }
-
 
     }
 }

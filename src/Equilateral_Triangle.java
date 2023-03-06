@@ -1,5 +1,3 @@
-package com.company;
-
 public class Equilateral_Triangle extends Triangle {
     private float side;
 
@@ -9,7 +7,7 @@ public class Equilateral_Triangle extends Triangle {
 
     @Override
     public float getArea() {
-        return (float) (Math.sqrt(3)/4) * (side * side);
+        return (float) (Math.sqrt(3) / 4) * (side * side);
     }
 
     @Override

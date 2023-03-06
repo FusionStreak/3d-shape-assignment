@@ -1,5 +1,3 @@
-package com.company;
-
 // This class assumes an equilateral base, and an apex of the center of the base.
 // Volume is  a third of (the area of base times the height of the pyramid perpendicular to the base)
 // The surface area A + 3/2bh, where A is the area of the base, and b is the length of one side of the base,
@@ -26,7 +24,7 @@ class TriPyramid extends Pyramid {
     }
 
     @Override
-    public float getVolume(){
-        return (1f/3f) * (base.getArea() * height);
+    public float getVolume() {
+        return (1f / 3f) * (base.getArea() * height);
     }
 }

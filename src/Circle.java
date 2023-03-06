@@ -1,5 +1,3 @@
-package com.company;
-
 public class Circle implements $2D_Shape {
     private float radius;
 
@@ -17,7 +15,7 @@ public class Circle implements $2D_Shape {
     }
 
     public float getCircumference() {
-        return (float)( 2 * radius * Math.PI);
+        return (float) (2 * radius * Math.PI);
     }
 
     @Override

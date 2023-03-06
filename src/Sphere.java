@@ -1,5 +1,3 @@
-package com.company;
-
 import static java.lang.Math.*;
 
 public class Sphere implements $3D_Shape {
@@ -11,7 +9,7 @@ public class Sphere implements $3D_Shape {
 
     @Override
     public float getVolume() {
-        return (float) (((float)4/(float)3) * PI * pow(radius,3));
+        return (float) (((float) 4 / (float) 3) * PI * pow(radius, 3));
     }
 
     @Override
@@ -22,7 +20,7 @@ public class Sphere implements $3D_Shape {
     @Override
     public String volumeExplain() {
         final String message;
-        message = "(4/3) x π x  " + String.format("%.2f",radius) + "^3 = " + String.format("%.2f", getVolume());
+        message = "(4/3) x π x  " + String.format("%.2f", radius) + "^3 = " + String.format("%.2f", getVolume());
         return message;
     }
 

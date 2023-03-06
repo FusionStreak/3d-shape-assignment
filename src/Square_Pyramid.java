@@ -1,5 +1,3 @@
-package com.company;
-
 public class Square_Pyramid extends Pyramid {
     Square_Pyramid(float side, float height) {
         base = new Square(side);
@@ -8,7 +6,7 @@ public class Square_Pyramid extends Pyramid {
 
     @Override
     public float getVolume() {
-        return (1f/3f) * (base.getArea() * height);
+        return (1f / 3f) * (base.getArea() * height);
     }
 
     @Override
@@ -18,7 +16,7 @@ public class Square_Pyramid extends Pyramid {
 
     @Override
     public String volumeExplain() {
-    return "";
+        return "";
     }
 
     @Override

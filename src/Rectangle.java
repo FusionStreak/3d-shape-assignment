@@ -1,5 +1,3 @@
-package com.company;
-
 public class Rectangle implements $2D_Shape {
     private float width;
     private float length;
@@ -17,7 +15,7 @@ public class Rectangle implements $2D_Shape {
     @Override
     public String areaExplain() {
         final String message;
-        message = "Area of a rectangle (width x length): " + getWidth()+ " x " + getLength() + " = " + getArea();
+        message = "Area of a rectangle (width x length): " + getWidth() + " x " + getLength() + " = " + getArea();
         return message;
     }
 

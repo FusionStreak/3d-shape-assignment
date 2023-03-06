@@ -1,5 +1,3 @@
-package com.company;
-
 public interface $3D_Shape {
     float getVolume();
 
@@ -8,6 +6,5 @@ public interface $3D_Shape {
     String volumeExplain();
 
     String surfaceAreaExplain();
-
 
 }
